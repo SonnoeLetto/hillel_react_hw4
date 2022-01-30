@@ -9,7 +9,6 @@ export class Page extends Component {
         isEditing: false
     }
     addNews = (news) => {
-
         this.setState({
             items: [
                 news, ...data
@@ -23,7 +22,6 @@ export class Page extends Component {
         })
     }
     render() {
-        console.log(this.state.items)
         
         return (
             <>

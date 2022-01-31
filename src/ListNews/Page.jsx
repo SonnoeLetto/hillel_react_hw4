@@ -11,7 +11,7 @@ export class Page extends Component {
     addNews = (news) => {
         this.setState({
             items: [
-                news, ...data
+                news, ...this.state.items
             ]
         })
     }

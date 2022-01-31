@@ -23,7 +23,9 @@ export class Form extends Component {
     }
 
     handleSubmit = (e) => {
+        
         e.preventDefault();
+
         if(!this.validate()) {
             this.setState({
                 valida: true
@@ -58,6 +60,7 @@ export class Form extends Component {
 
         this.setState({
             item: {
+                ...this.state.item,
                 [name]: value
             }
         })
@@ -76,14 +79,15 @@ export class Form extends Component {
     }
 
     render() {
+        console.log(this.state)
         return (
             <div>
                 <form onSubmit={this.handleSubmit} action="" >
                     <div>
                         <label htmlFor="title">Title: </label>
                         <input value={this.state.item.title} onChange={this.handleChangeText} id="title" name="title"/>
-                        { this.valida && 
-                            <span style={{'color': 'red'}}>Это поле ОЧЕНЬ НАМ НУЖНО</span>                    
+                        { this.state.valida && 
+                            <span style={{'color': 'red'}}>Это поле ОЧЕНЬ НАМ НУЖНО</span>                
                             }
                     </div>
                     <div>
